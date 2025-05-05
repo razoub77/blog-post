@@ -1,18 +1,25 @@
 <%- include('partials/header.ejs') %>
 
 <% if (posts.length > 0) { %>
-  <% for( let i = 0; i < posts.length; i++ ) { %>
-    <h1><%= posts[i].title %></h1>
+<% for( let i = 0; i < posts.length; i++ ) { %>
+<div class="container">
+  <h1 class="post-title"><%= posts[i].title %></h1>
+  <div class="button-wrapper">
     <form action="/edit/<%= i %>" method="get">
-      <button type="submit">Edit</button>
+      <button type="submit" class="button edit">Edit</button>
     </form>
     <form action="/delete/<%= i %>" method="post">
-      <button type="submit">Delete</button>
+      <button type="submit" class="button delete">Delete</button>
     </form>
-    <p><%= posts[i].content %></p>
-  <% } %>
+  </div>
+  <p class="post-content"><%= posts[i].content %></p>
+</div>
+<% } %>
 <% } else { %>
+<div class="no-blog">
   <h1>There's no blog yet. Start creating one!</h1>
+  <a href="/create"><button class="create">Create</button></a>
+</div>
 <% } %>
 
 <%- include('partials/footer.ejs') %>
