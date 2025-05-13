@@ -16,14 +16,14 @@ export default function Blog({
       <div className="flex gap-2">
         <Link
           href={`/${id}/edit`}
-          className="px-2 py-1 rounded-md bg-amber-500"
+          className="px-1 py-1 rounded-md bg-amber-500"
         >
           <EditIcon />
         </Link>
         <form action={onDelete}>
           <button
             type="submit"
-            className="px-2 py-1 bg-red-600 rounded-md cursor-pointer"
+            className="px-1 py-1 bg-red-600 rounded-md cursor-pointer"
           >
             <DeleteIcon />
           </button>

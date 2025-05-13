@@ -1,4 +1,4 @@
-import EditForm from '@/components/edit-form';
+import EditForm from '@/components/EditForm';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default async function Page(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
-  const id = Number(params.id);
+  const id = params.id;
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-24">
