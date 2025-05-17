@@ -2,11 +2,13 @@ import { ChangeEvent } from 'react';
 
 export default function Form({
   title,
+  author,
   content,
   onChange,
   onSubmit,
 }: {
   title: string;
+  author: string;
   content: string;
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
@@ -23,6 +25,14 @@ export default function Form({
         value={title}
         type="text"
         placeholder="Title"
+        className="p-2 border border-gray-300 rounded"
+      />
+      <input
+        onChange={onChange}
+        name="author"
+        value={author}
+        type="text"
+        placeholder="Author"
         className="p-2 border border-gray-300 rounded"
       />
       <textarea

@@ -20,10 +20,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Bloggger',
-    template: '%s | Bloggger',
+    default: 'PimBi',
+    template: '%s | PimBi',
   },
-  description: 'Create your blog here',
+  description: 'Post your blog here',
 };
 
 export default function RootLayout({

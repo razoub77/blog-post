@@ -13,6 +13,7 @@ export default function EditForm({ id }: { id: string }) {
   const [input, setInput] = useState<Post>({
     id: '',
     title: '',
+    author: '',
     content: '',
   });
   useEffect(() => {
@@ -20,6 +21,7 @@ export default function EditForm({ id }: { id: string }) {
       setInput({
         id: post.id,
         title: post.title,
+        author: post.author,
         content: post.content,
       });
     }
@@ -44,13 +46,14 @@ export default function EditForm({ id }: { id: string }) {
     };
     filtered.push(updated);
     localStorage.setItem('posts', JSON.stringify(filtered));
-    setInput({ id: '', title: '', content: '' });
+    setInput({ id: '', title: '', author: '', content: '' });
     redirect('/');
   };
 
   return (
     <Form
       title={input.title}
+      author={input.author}
       content={input.content}
       onChange={handleChange}
       onSubmit={handleSubmit}

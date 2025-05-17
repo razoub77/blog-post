@@ -11,6 +11,7 @@ export default function CreateForm() {
   const [input, setInput] = useState<Post>({
     id: '',
     title: '',
+    author: '',
     content: '',
   });
   const { posts } = usePosts();
@@ -31,13 +32,14 @@ export default function CreateForm() {
     posts.push(post);
     console.log(posts[posts.length - 1]);
     localStorage.setItem('posts', JSON.stringify(posts));
-    setInput({ id: '', title: '', content: '' });
+    setInput({ id: '', title: '', author: '', content: '' });
     redirect('/');
   };
 
   return (
     <Form
       title={input.title}
+      author={input.author}
       content={input.content}
       onChange={handleChange}
       onSubmit={handleSubmit}
