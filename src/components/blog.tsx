@@ -11,21 +11,21 @@ export default function Blog({
   onDelete,
 }: Post & { onDelete: () => void }) {
   return (
-    <div className="px-4 py-4 sm:px-12">
-      <h1 className="mb-2 text-left text-4xl">{title}</h1>
+    <div className="py-4">
+      <h1 className="mb-2 text-4xl text-left">{title}</h1>
       <p className="mb-2">By: {author}</p>
       <p className="mb-3 text-justify">{content}</p>
       <div className="flex gap-2">
         <Link
           href={`/${id}/edit`}
-          className="px-1 py-1 rounded-md bg-amber-500"
+          className="px-1 py-1 transition duration-100 rounded-md hover:bg-amber-500"
         >
           <EditIcon />
         </Link>
         <form action={onDelete}>
           <button
             type="submit"
-            className="px-1 py-1 bg-red-600 rounded-md cursor-pointer"
+            className="px-1 py-1 transition duration-100 rounded-md cursor-pointer hover:bg-red-600"
           >
             <DeleteIcon />
           </button>

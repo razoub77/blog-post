@@ -17,7 +17,7 @@ export default function Form({
     <form
       onSubmit={onSubmit}
       autoComplete="off"
-      className="flex flex-col w-full gap-4 sm:w-1/2"
+      className="flex flex-col w-full gap-4"
     >
       <input
         onChange={onChange}
@@ -44,7 +44,7 @@ export default function Form({
       />
       <button
         type="submit"
-        className="w-full p-2 text-white bg-blue-500 rounded items sm:w-1/3 lg:w-1/4"
+        className="w-full p-2 text-white bg-blue-500 rounded items md:w-1/4"
       >
         Submit
       </button>

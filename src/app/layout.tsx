@@ -1,5 +1,5 @@
 import './globals.css';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Josefin_Sans } from 'next/font/google';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -8,14 +8,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const josefinSans = Josefin_Sans({
   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -33,9 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${josefinSans.className} antialiased`}>
         <Header />
         {children}
         <Footer />
